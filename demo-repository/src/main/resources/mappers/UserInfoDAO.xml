@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demoeurekaclient.UserInfoDAO">
+    <resultMap id="BaseResultMap" type="com.example.demoeurekaclient.module.UserInfoDO">
+        <id column="id"  jdbcType="BIGINT" property="id"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="create_user" jdbcType="VARCHAR" property="createUser"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="game_id" jdbcType="BIGINT" property="gameId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,gmt_create,create_user,status,game_id
+    </sql>
+
+    <insert id="insert" parameterType="com.example.demoeurekaclient.module.UserInfoDO" useGeneratedKeys="true" keyProperty="id">
+        insert into dbzhang_userinfo (id,gmt_create,create_user,status,game_id)
+        values (#{id,jdbcType=BIGINT},now(),#{createUser,jdbcType=VARCHAR},#{status,jdbcType=INTEGER}
+        ,#{gameId,jdbcType=BIGINT})
+    </insert>
+</mapper>
