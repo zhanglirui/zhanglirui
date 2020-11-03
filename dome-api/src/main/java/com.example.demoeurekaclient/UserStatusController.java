@@ -40,7 +40,7 @@ public class UserStatusController {
 
         BaseResult baseResult = new BaseResult();
         baseResult.setData(userInfo);
-        baseResult.setSuccess(false);
+        baseResult.setSuccess(true);
         return baseResult;
     }
 }
