@@ -1,9 +1,12 @@
 package com.example.demoeurekaclient.impl;
 
+import com.example.demoeurekaclient.Interceptor.UserBeforInterceptor;
 import com.example.demoeurekaclient.UserInfoDAO;
 import com.example.demoeurekaclient.UserInfoService;
+import com.example.demoeurekaclient.common.CommandManager;
 import com.example.demoeurekaclient.entry.UserInfoQuery;
 import com.example.demoeurekaclient.module.UserInfoDO;
+import org.apache.ibatis.plugin.Intercepts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +20,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private UserInfoDAO userInfoDAO;
 
+    @Autowired
+    private CommandManager commandManager;
+
     @Override
     public int saveObject(UserInfoQuery query) {
 
@@ -27,5 +33,8 @@ public class UserInfoServiceImpl implements UserInfoService {
 
         int insert = userInfoDAO.insert(userInfoDO);
         return insert;
+    }
+
+    public int invok(){
     }
 }

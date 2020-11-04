@@ -8,6 +8,7 @@ import com.example.demoeurekaclient.context.UserStatusServiceContext;
 import com.example.demoeurekaclient.entry.UserInfoQuery;
 import com.example.demoeurekaclient.result.BaseResult;
 import com.fasterxml.jackson.annotation.JsonAlias;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author zhanglirui
  * @date 2020/11/3 11:09 上午
  */
+@Slf4j
 @RestController
 @RequestMapping("UserStatus")
 public class UserStatusController {
@@ -41,6 +43,8 @@ public class UserStatusController {
         BaseResult baseResult = new BaseResult();
         baseResult.setData(userInfo);
         baseResult.setSuccess(true);
+
+        log.info("业务跑成功了");
         return baseResult;
     }
 }
