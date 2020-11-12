@@ -1,5 +1,7 @@
 package com.example.demoeurekaclient.impl;
 
+import javax.annotation.Resource;
+
 import com.example.demoeurekaclient.Interceptor.UserBeforInterceptor;
 import com.example.demoeurekaclient.UserInfoDAO;
 import com.example.demoeurekaclient.UserInfoService;
@@ -17,7 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
 
-    @Autowired
+    @Resource
     private UserInfoDAO userInfoDAO;
 
     @Autowired
@@ -35,6 +37,4 @@ public class UserInfoServiceImpl implements UserInfoService {
         return insert;
     }
 
-    public int invok(){
-    }
 }

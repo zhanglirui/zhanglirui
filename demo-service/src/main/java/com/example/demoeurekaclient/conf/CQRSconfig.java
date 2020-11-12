@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @author zhanglirui
  * @date 2020/11/4 11:26 上午
  */
-@Configuration
+//@Configuration
 public class CQRSconfig {
 
     @Bean(initMethod = "init")
