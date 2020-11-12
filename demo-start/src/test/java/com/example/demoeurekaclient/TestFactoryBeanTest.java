@@ -32,6 +32,7 @@ public class TestFactoryBeanTest {
         Assert.assertNotNull(object);
     }
 
+
     @Test
     public void getObjectType() {
     }
