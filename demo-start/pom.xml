@@ -20,6 +20,11 @@
     <dependencies>
 
         <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.example</groupId>
             <artifactId>dome-api</artifactId>
         </dependency>

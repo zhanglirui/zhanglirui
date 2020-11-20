@@ -3,6 +3,8 @@ package com.example.demoeurekaclient;
 import com.example.demoeurekaclient.mq.CustomBinding;
 import com.example.demoeurekaclient.mq.SinkDome;
 import com.example.demoeurekaclient.mq.SourceDome;
+import com.example.demoeurekaclient.redis.messagr.MessagingRedis;
+import com.example.demoeurekaclient.redis.messagr.Receiver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -12,6 +14,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Processor;
 import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.redis.core.StringRedisTemplate;
+
+import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 @SpringBootApplication(scanBasePackages = "com.example.demoeurekaclient")
 @EnableEurekaClient
@@ -28,8 +35,8 @@ import org.springframework.cloud.stream.messaging.Source;
 // Processor接口同时继承了Source和Sink接口，所以当@EnableBinding指定了Processor接口时相当于同时应用了两个Binding
 public class DemoStartApplication {
 
-     public static void main(String[] args) {
-        SpringApplication.run(DemoStartApplication.class, args);
-    }
+     public static void main(String[] args) throws InterruptedException {
+         SpringApplication.run(DemoStartApplication.class, args);
+     }
 
 }
