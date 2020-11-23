@@ -16,7 +16,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
-import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisSentinelPool;
 import redis.clients.jedis.Protocol;
@@ -81,6 +80,9 @@ public class RedisDaoTest implements ApplicationContextAware {
 
     @Test
     public void jedisCluster() {
+        // todo 多练习练习集群的数据格式命令
+        String set = createJedis.set("ceshi1", "ceshi1");
+
         String ceshi1 = createJedis.get("ceshi1");
         System.out.println("ceshi1的值为"+ceshi1);
     }

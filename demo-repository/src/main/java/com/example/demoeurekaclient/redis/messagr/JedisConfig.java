@@ -38,7 +38,7 @@ public class JedisConfig {
     @Bean
     public JedisCluster createJedis(){
         Set<HostAndPort> jedisClusterNode = new HashSet<HostAndPort>();
-        jedisClusterNode.add(new HostAndPort(redisHost, 6379));
+        jedisClusterNode.add(new HostAndPort(redisHost, 7000));
         DEFAULT_CONFIG.setMaxTotal(MAX_TOTAL);
         DEFAULT_CONFIG.setMaxIdle(MAX_IDLE);
         DEFAULT_CONFIG.setTestOnBorrow(false);
