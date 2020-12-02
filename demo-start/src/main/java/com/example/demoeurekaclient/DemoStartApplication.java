@@ -17,6 +17,7 @@ import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
@@ -33,6 +34,8 @@ import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 @EnableBinding({Source.class , SourceDome.class})
 // 在一个接口中可以同时定义多个Binding，只需要定义多个@Input或@Output标注的方法。
 // Processor接口同时继承了Source和Sink接口，所以当@EnableBinding指定了Processor接口时相当于同时应用了两个Binding
+
+@EnableScheduling //开启定时任务
 public class DemoStartApplication {
 
      public static void main(String[] args) throws InterruptedException {
