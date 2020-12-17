@@ -32,9 +32,11 @@
 		<demo.repository.version>0.0.1-SNAPSHOT</demo.repository.version>
 		<demo.common.version>0.0.1-SNAPSHOT</demo.common.version>
 		<jedis.version>2.9.0</jedis.version>
+		<zookeeper.version>3.6.2</zookeeper.version>
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -156,8 +158,13 @@
 					<artifactId>lettuce-core</artifactId>
 				</exclusion>
 			</exclusions>
-
 		</dependency>
+
+		<!--zookeeper的使用-->
+		<!--<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+		</dependency>-->
 
 	</dependencies>
 
